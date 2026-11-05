@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Caretaker Chiron — Open-source system exploration platform</title>
+  <meta name="description" content="Caretaker Chiron is an early-stage, open-source system exploration platform for making the inner workings of your computer understandable, observable, and accessible.">
+  <meta name="theme-color" content="#0e100f">
+  <meta name="color-scheme" content="dark">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Caretaker Chiron — Understand your system. Explore beneath the surface.">
+  <meta property="og:description" content="An early-stage, open-source system exploration platform built with Rust, Tauri 2, React, and TypeScript.">
+  <meta property="og:site_name" content="Caretaker Chiron">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Caretaker Chiron">
+  <meta name="twitter:description" content="Open-source system exploration. Early development.">
+  <!-- Add <link rel="canonical"> and og:url once the public URL is confirmed. -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap bar">
+      <a class="brand" href="#overview" aria-label="Caretaker Chiron, back to top">
+        <img src="favicon.svg" alt="" width="24" height="24">
+        <span>Caretaker Chiron</span>
+      </a>
+      <button id="nav-toggle" class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-menu" aria-label="Open menu">
+        <span class="bars" aria-hidden="true"></span>
+      </button>
+      <nav id="nav-menu" class="nav-menu" aria-label="Primary">
+        <ul>
+          <li><a data-nav href="#overview">Overview</a></li>
+          <li><a data-nav href="#vision">Vision</a></li>
+          <li><a data-nav href="#capabilities">Capabilities</a></li>
+          <li><a data-nav href="#roadmap">Roadmap</a></li>
+          <li><a data-nav href="#community">Community</a></li>
+        </ul>
+        <div class="nav-actions">
+          <a class="btn btn-ghost" href="https://github.com/CareTaker-Chiron/CareTaker-Chiron.git" rel="noopener">GitHub</a>
+          <a class="btn btn-solid" href="#capabilities">Explore the project</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section id="overview" class="hero">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <p class="status"><span class="dot" aria-hidden="true"></span>Early development · Open source</p>
+          <h1>Understand your system. Explore beneath the surface.</h1>
+          <p class="lede">Caretaker Chiron is an open-source system exploration platform designed to make the inner workings of your computer understandable, observable, and accessible — without sacrificing technical depth.</p>
+          <div class="actions">
+            <a class="btn btn-solid" href="https://github.com/CareTaker-Chiron/CareTaker-Chiron.git" rel="noopener">Explore on GitHub</a>
+            <a class="btn btn-ghost" href="#vision">Discover the vision</a>
+          </div>
+        </div>
+
+        <figure class="hero-visual">
+          <svg viewBox="0 0 560 420" role="img" aria-labelledby="tree-title tree-desc">
+            <title id="tree-title">Illustrative process tree with a highlighted evidence path</title>
+            <desc id="tree-desc">A tree of system components. One path from the system root to a single process is highlighted, and a note beside it lists the kinds of evidence an explanation would cite. The data is illustrative, not real output.</desc>
+            <defs>
+              <pattern id="grid" width="28" height="28" patternUnits="userSpaceOnUse"><path d="M28 0H0V28" fill="none" stroke="#1d211f" stroke-width="1"/></pattern>
+            </defs>
+            <rect width="560" height="420" fill="url(#grid)"/>
+            <g class="edges" fill="none" stroke="#3a413d" stroke-width="1.5">
+              <path d="M70 210H120V90H190M120 210V210H190M120 210V330H190"/>
+              <path d="M290 90H330V50H380M330 90V130H380"/>
+              <path d="M290 210H330V210H380"/>
+              <path d="M290 330H330V300H380M330 330V360H380"/>
+            </g>
+            <g class="trace" fill="none" stroke="#b6f24a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path pathLength="1" d="M70 210H120V90H190M290 90H330V130H380"/>
+            </g>
+            <g font-family="ui-monospace,Menlo,Consolas,monospace" font-size="12">
+              <g fill="#121413" stroke="#3a413d"><rect x="20" y="194" width="100" height="32" rx="4"/><rect x="190" y="74" width="100" height="32" rx="4"/><rect x="190" y="194" width="100" height="32" rx="4"/><rect x="190" y="314" width="100" height="32" rx="4"/><rect x="380" y="34" width="110" height="32" rx="4"/><rect x="380" y="194" width="110" height="32" rx="4"/><rect x="380" y="284" width="110" height="32" rx="4"/><rect x="380" y="344" width="110" height="32" rx="4"/></g>
+              <rect x="380" y="114" width="150" height="32" rx="4" fill="#1b2a0c" stroke="#b6f24a"/>
+              <g fill="#c9cdc9"><text x="36" y="214">system</text><text x="206" y="94">service A</text><text x="206" y="214">service B</text><text x="206" y="334">service C</text><text x="396" y="54">process</text><text x="396" y="214">process</text><text x="396" y="304">process</text><text x="396" y="364">process</text></g>
+              <text x="396" y="134" fill="#d8ff8a">process under study</text>
+            </g>
+            <g font-family="ui-monospace,Menlo,Consolas,monospace" font-size="11" fill="#8d958f">
+              <text x="380" y="168">evidence:</text>
+              <text x="380" y="184">parent chain · cpu · memory</text>
+            </g>
+          </svg>
+          <figcaption>Illustrative. Not output from a released build.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section id="problem" class="section">
+      <div class="wrap narrow">
+        <h2>Your computer is doing more than you can see.</h2>
+        <p>Operating systems expose an enormous amount of useful information: which programs are running, what they consume, how they relate to one another. Most of it is hard to read unless you already know what you are looking at.</p>
+        <p>Advanced utilities such as Process Hacker and x64dbg reveal remarkable detail, but they assume expertise. Simpler monitors are approachable, but often stop at the surface.</p>
+        <p>Caretaker Chiron is an attempt to bridge that gap: make the complex understandable, without making the underlying technology less powerful.</p>
+      </div>
+    </section>
+
+    <section id="vision" class="section alt">
+      <div class="wrap">
+        <h2>Powerful enough to investigate. Clear enough to understand.</h2>
+        <ul class="principles">
+          <li><h3>Clarity without oversimplification</h3><p>Complex information should be understandable without removing the technical details that make it useful.</p></li>
+          <li><h3>Evidence before explanations</h3><p>System explanations should be grounded in observable evidence, not unsupported guesses.</p></li>
+          <li><h3>Local-first and privacy-conscious</h3><p>Prefer local inspection and transparent data handling. Cloud assistance should be optional.</p></li>
+          <li><h3>User control and safety</h3><p>Privileged operations should be explicit. AI must not silently execute arbitrary system commands.</p></li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="capabilities" class="section">
+      <div class="wrap">
+        <h2>One place to explore your system.</h2>
+        <p class="note">None of these capabilities are available yet. This is the direction of the project.</p>
+        <ul class="caps">
+          <li><span class="tag">Planned</span><h3>Process exploration</h3><p>Discover, search, sort, and inspect running processes.</p></li>
+          <li><span class="tag">Planned</span><h3>System monitoring</h3><p>Understand CPU, memory, storage, and resource activity.</p></li>
+          <li><span class="tag">Planned</span><h3>System intelligence</h3><p>Make complicated system information easier to understand.</p></li>
+          <li><span class="tag">Planned</span><h3>AI-assisted investigation</h3><p>Explore evidence-grounded explanations and investigation workflows.</p></li>
+          <li><span class="tag">Planned</span><h3>Advanced inspection</h3><p>Provide deeper technical information for experienced users.</p></li>
+          <li><span class="tag">In design</span><h3>Cross-platform direction</h3><p>Design for Windows, Linux, and macOS.</p></li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="architecture" class="section alt">
+      <div class="wrap">
+        <h2>Built on a foundation designed for depth.</h2>
+        <div class="arch-grid">
+          <div>
+            <ol class="flow" aria-label="Planned architecture, from user interface to operating system">
+              <li><strong>Desktop UI</strong><span>React · TypeScript</span></li>
+              <li><strong>Tauri IPC</strong><span>Typed commands and events</span></li>
+              <li><strong>Rust Core</strong><span>System-facing logic, validation</span></li>
+              <li><strong>Platform Adapters</strong><span>Windows first; Linux, macOS</span></li>
+              <li><strong>Operating System</strong><span>Processes, memory, storage</span></li>
+            </ol>
+            <div class="ai-layer">
+              <strong>Optional AI layer</strong>
+              <span>Consumes validated evidence from the Rust Core. Proposes explanations; does not run system commands on its own.</span>
+            </div>
+          </div>
+          <ul class="stack">
+            <li><strong>Rust</strong> System-facing core</li>
+            <li><strong>Tauri 2</strong> Desktop application framework</li>
+            <li><strong>React and TypeScript</strong> User interface</li>
+            <li><strong>Vite and pnpm</strong> Frontend development</li>
+            <li><strong>SQLite</strong> Planned local persistence</li>
+            <li><strong>Hybrid AI</strong> Planned local and optional cloud intelligence</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="platforms" class="section">
+      <div class="wrap">
+        <h2>Intended platforms.</h2>
+        <p class="note">No production releases exist yet.</p>
+        <ul class="platforms">
+          <li><h3>Windows</h3><p>First complete implementation target.</p></li>
+          <li><h3>Linux</h3><p>Compatibility considered from the start.</p></li>
+          <li><h3>macOS</h3><p>Compatibility considered from the start.</p></li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="roadmap" class="section alt">
+      <div class="wrap">
+        <h2>Building it one layer at a time.</h2>
+        <p class="note">The project is in early development. Stages describe intent and may change.</p>
+        <ol class="road">
+          <li><span class="n">01</span><div><h3>Foundation</h3><p>Repository, architecture, application shell, platform detection, IPC.</p></div></li>
+          <li><span class="n">02</span><div><h3>Native system intelligence</h3><p>Process enumeration, resource monitoring, process inspection, search and sorting.</p></div></li>
+          <li><span class="n">03</span><div><h3>Investigation experience</h3><p>Evidence collection, system visualization, technical explanations.</p></div></li>
+          <li><span class="n">04</span><div><h3>AI assistance</h3><p>Evidence-grounded explanations, local models, optional cloud support.</p></div></li>
+          <li><span class="n">05</span><div><h3>Cross-platform maturity</h3><p>Windows, Linux, macOS validation, testing, packaging, releases.</p></div></li>
+        </ol>
+      </div>
+    </section>
+
+    <section id="community" class="section">
+      <div class="wrap narrow">
+        <h2>Built in the open. Improved together.</h2>
+        <p>Caretaker Chiron is intended to be an open-source project under the Apache License 2.0. Developers, designers, testers, documentation contributors, and interested users are welcome to follow its development.</p>
+        <div class="actions">
+          <a class="btn btn-solid" href="https://github.com/CareTaker-Chiron/CareTaker-Chiron.git" rel="noopener">View GitHub Repository</a>
+          <a class="btn btn-ghost" href="https://github.com/CareTaker-Chiron/CareTaker-Chiron.git#readme" rel="noopener">Read the README</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap foot">
+      <div>
+        <p class="foot-brand">Caretaker Chiron</p>
+        <p class="muted">Open-source system exploration. Understandable, without losing depth.</p>
+      </div>
+      <ul>
+        <li><a href="https://github.com/CareTaker-Chiron/CareTaker-Chiron.git" rel="noopener">GitHub</a></li>
+        <li><a href="https://github.com/CareTaker-Chiron/CareTaker-Chiron.git#readme" rel="noopener">README</a></li>
+        <li>License: Apache 2.0</li>
+        <li>Status: Early development</li>
+      </ul>
+      <p class="muted copy">© <span id="year">2026</span> Caretaker Chiron contributors</p>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

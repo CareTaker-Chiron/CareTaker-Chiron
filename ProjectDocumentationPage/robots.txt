@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Replace with the final public URL once confirmed.
+Sitemap: https://YOUR_GITHUB_USERNAME.github.io/caretaker-chiron/sitemap.xml
